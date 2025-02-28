@@ -1,0 +1,21 @@
+{
+  "name": "2024-adventofcode",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "day01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankparkyoung/2024-adventofcode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hankparkyoung/2024-adventofcode/issues"
+  },
+  "homepage": "https://github.com/hankparkyoung/2024-adventofcode#readme"
+}
