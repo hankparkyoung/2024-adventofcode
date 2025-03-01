@@ -1,14 +1,32 @@
-import { readFile } from 'fs/promises';
+import { parseInput } from './parseInput.js';
 
-const readInputFromFile = async (filePath) => {
-  try {
-    const data = await readFile(filePath, 'utf-8');
-    return data;
-  } catch (err) {
-    console.error("Failed to read file:", err);
+const exampleFile = `
+3   4
+4   3
+2   5
+1   3
+3   9
+3   3
+`;
+const puzzleFilePath = './inputs/day01.txt';
+
+const parser = input => {
+  const numberList = [...input].filter(t => t !== '\n' && t !== ' ');
+  const listOne = [];
+  const listTwo = [];
+  numberList.forEach((num, index) => {
+    index % 2 === 0 
+      ? listOne.push(num)
+      : listTwo.push(num)
+  });
+  return {
+    1: listOne,
+    2: listTwo,
   }
-}
+};
 
-const rawInput = await readInputFromFile('./inputs/day01.txt');
+const exampleInput = parser(exampleFile);
+const puzzleInput = await parseInput(puzzleFilePath, parser);
 
-console.log(rawInput);
+console.log(exampleInput);
+console.log(puzzleInput);
